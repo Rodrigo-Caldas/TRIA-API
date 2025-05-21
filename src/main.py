@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from mangum import Mangum
 
+from src.chuva.router import rotas_chuva
 from src.config import fastapi
 
 app = FastAPI(
@@ -13,6 +14,7 @@ app = FastAPI(
     title="Desafio TRIA API",
     description="API for Trio challenge",
 )
+app.include_router(rotas_chuva, prefix="/tria-api")
 
 app.add_middleware(
     CORSMiddleware,
