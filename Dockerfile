@@ -5,8 +5,6 @@ WORKDIR /home
 COPY src src
 COPY requirements.txt .
 
-VOLUME ["/home/download"]
-
 RUN python -m venv tria-api
 RUN python -m pip install --upgrade pip
 RUN pip install -r requirements.txt
